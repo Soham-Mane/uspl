@@ -38,12 +38,12 @@ Revolutionize your trading with our Option Trading software – available on bot
         <div>
             <p className="text-base font-bold tracking-wide text-gray-900">COMPANY IS ALSO AVAILABLE ON</p>
             <div className="flex items-center gap-1 px-2">
-                <a href="#" className="w-full min-w-xl">
+                <a href="https://play.google.com/store/apps/details?id=com.uspl.uspl&hl=en-IN" className="w-full min-w-xl">
                     <img src="https://mcqmate.com/public/images/icons/playstore.svg" alt="Playstore Button"
                         className="h-10"/>
                 </a>
                 <a className="w-full min-w-xl" href="https://www.youtube.com/channel/UCo8tEi6SrGFP8XG9O0ljFgA">
-                    <img src={download} alt="Youtube Button"
+                    <img src={download} alt="App Store Button"
                         className="h-10"/>
                 </a>
             </div>

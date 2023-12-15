@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import 'keen-slider/keen-slider.min.css';
 import KeenSlider from 'keen-slider';
-
+import logo from '../images/logo.png';
 const Testimonials = ()=> {
   useEffect(() => {
     const keenSlider = new KeenSlider('#keen-slider', {
@@ -160,8 +160,9 @@ const Testimonials = ()=> {
             </div>
 
             <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
-              &mdash; Sarah Thompson
+              &mdash; Sarah 
             </footer>
+          
           </blockquote>
         </div>
 
