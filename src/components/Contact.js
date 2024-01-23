@@ -1,27 +1,46 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import emailjs from '@emailjs/browser';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import image from '../images/WhatsApp Image 2024-01-09 at 21.23.35.jpeg';
 const Contact = () => {
-    
     const form = useRef();
+    const [firstName,setFirstName]=useState("");
+    const [lastName,setLastName]=useState("");
+    const [email,setEmail]=useState("");
+    const [contact,setContact]=useState("");
+    const [message,setMessage]=useState("");
+    // const notify = () => toast("Message sent successfully.Our Team will contact you within 8 working days");
+
 
     const sendEmail = (e) => {
-      e.preventDefault();
-  
-      emailjs.sendForm('service_y3udtnm', 'template_49z0hoo', form.current, 'YOUR_PUBLIC_KEY')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
-    };
+        e.preventDefault();
+
+        emailjs.sendForm('service_y3udtnm', 'template_kcwhpow', form.current, 'TJyc7_o85Pt_Ykwh9')
+          .then((result) => {
+              console.log(result.text);
+              console.log("Happy");
+              toast.success(' Message sent successfully.Our Team will contact you within 7 working days', {
+                position: "top-right",
+                autoClose: 5000,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
+            }, (error) => {
+              console.log(error.text);
+          });
+      };
 
 
   return (
     <div className='w-[92vw]  mx-auto pt-[3rem] sm:w-[85vw] sm:px-[3rem] mb-12'>
-     <div className="map-container">
-  <iframe
+
+     <div class="relative w-full h-96 flex justify-center " >
+  {/* <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.2386362926895!2d-97.78526902464867!3d30.201735774844742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b354fff7171d%3A0x9386acbe56d3fc62!2sBlueberry%20Hill%2C%20Austin%2C%20TX%2078745%2C%20USA!5e0!3m2!1sen!2sin!4v1702271420357!5m2!1sen!2sin"
     width="1200"
     height="450"
@@ -29,11 +48,14 @@ const Contact = () => {
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
     title="responsive Google Map"
-    className="rounded-md"
-  ></iframe>
+    class="absolute inset-0 w-full h-full rounded-md"
+  ></iframe> */}
+  <img
+  className='h-full w-5/6 mb-4 items-center	'
+  src={image} />
 </div>
-     
-  <section class="bg-white dark:bg-gray-900">
+
+  <section class="mt-12 ">
     <div class="container px-6 py-12 mx-auto">
         <div>
             <p class="text-lg font-semibold leading-7 text-indigo-600">Contact us</p>
@@ -97,42 +119,55 @@ const Contact = () => {
             </div>
 
             <div class="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
-                <form ref={form} onSubmit={sendEmail}>
+                <form ref={form}  onSubmit={sendEmail}>
                     <div class="-mx-2 md:items-center md:flex">
                         <div class="flex-1 px-2">
                             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
-                            <input type="text" placeholder="John" name='to_name' class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input onChange={(e)=>setFirstName(e.target.value)} type="text" placeholder="John" name="from_name" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
 
                         <div class="flex-1 px-2 mt-4 md:mt-0">
                             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last Name</label>
-                            <input type="text" placeholder="Doe" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input onChange={(e)=>setLastName(e.target.value)} type="text" placeholder="Doe" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
                     </div>
 
                     <div class="mt-4">
                         <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
-                        <input type="email" name="" placeholder="johndoe@example.com" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input onChange={(e)=>setEmail(e.target.value)}  type="email" placeholder="johndoe@example.com" name="from_email" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div class="mt-4">
                         <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Mobile Number</label>
-                        <input type="tel" placeholder="+1 5589 55488 55" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input onChange={(e)=>setContact(e.target.value)} type="tel" placeholder="+1 5589 55488 55" name="contact_name" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div class="w-full mt-4">
                         <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Message</label>
-                        <textarea class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
+                        <textarea onChange={(e)=>setMessage(e.target.value)} name="message" class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-700 dark:focus:border-blue-400 focus:ring-purple-700 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
                     </div>
 
-                    <button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform  bg-[#51087E] hover:bg-purple-700 rounded-lg  focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                    <button  class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform  bg-[#51087E] hover:bg-purple-700 rounded-lg  focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                         Send message
                     </button>
                 </form>
+                <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
             </div>
         </div>
     </div>
 </section>
+
     </div>
   )
 }

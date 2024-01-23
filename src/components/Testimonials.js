@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import 'keen-slider/keen-slider.min.css';
 import KeenSlider from 'keen-slider';
-import logo from '../images/logo.png';
+
 const Testimonials = ()=> {
   useEffect(() => {
     const keenSlider = new KeenSlider('#keen-slider', {
@@ -42,7 +42,7 @@ const Testimonials = ()=> {
       <div className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-8 ">
     <div className="max-w-5xl items-end justify-between sm:flex sm:pe-6 lg:pe-8 ">
       <h2 className="max-w-xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Read trusted reviews from our customers
+        Read trusted reviews from our Traders
       </h2>
 
       <div className="mt-8 flex gap-4 lg:mt-0">
@@ -160,9 +160,8 @@ const Testimonials = ()=> {
             </div>
 
             <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
-              &mdash; Sarah 
+              &mdash; Sarah Thompson
             </footer>
-          
           </blockquote>
         </div>
 

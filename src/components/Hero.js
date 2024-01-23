@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Hero.css";
 import CountUp from 'react-countup';
-import mainImg from '../images/Screenshot 2023-12-12 105654.png';
-import ReactPlayer from 'react-player/lazy'
+import mainImg from '../images/headingImg.jpeg';
+import ReactPlayer from 'react-player/lazy';
 import VideoPlayer from '../components/VideoPlayer';
 import { useState, useRef, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import thumb from '../images/logo.png'
+import random from '../images/randomimage.jpeg';
 const Hero = ({ thumb, thumbWidth, thumbHeight, video, videoWidth, videoHeight }) => { 
   const [modalOpen, setModalOpen] = useState(false);
   const videoRef = useRef(null);
@@ -18,7 +20,7 @@ const Hero = ({ thumb, thumbWidth, thumbHeight, video, videoWidth, videoHeight }
   return (
   <>
   <div className=' w-[92vw]  mx-auto pt-[3rem] sm:w-[85vw] sm:px-[3rem] mb-12 '>
-    <div className='flex flex-col  justify-around min-h-screen gap-12'>
+    <div className='flex flex-col  justify-around min-h-screen '>
       <div className="flex 	 place-content-between bg-grey items-center xl:flex-row flex-col-reverse  mt-[2.5rem] xl:mt-[6rem] ">
          {/* text left side */}
           <div className=" w-full aos-init aos-animate">
@@ -34,17 +36,22 @@ const Hero = ({ thumb, thumbWidth, thumbHeight, video, videoWidth, videoHeight }
 
          </div>
             <h2 className="font-inter mt-3 xl:text-[1.4rem] text-[1.4rem] leading-[2.4rem] text-darksilver  xl:text-left text-center text-slate-500">           
-           <span className='text-black font-medium	'>USPL</span> specializes in crafting a personalized Algo Trading App, MOTA, designed for your specific options trading, especially in the BANKNIFTY F&O segment. We tailor the logic to your trading preferences. Opt for USPL to create your distinct Algo logic for options buying and participate in exclusive intraday trading using your account.          </h2>
+           <span className='text-black font-medium	'>USPL </span> 
+          focuses on creating a customized Algo Trading App called MOTA, specifically designed for your options trading needs, especially in the F&O segment. We customize the logic based on your trading preferences to develop a unique intraday options buying strategy using your account.
+              </h2>
       
-<div className='flex xl:flex-row flex-col mt-5'>
-        <button
-          className='xl:w-60  h-12 bg-[#51087E] hover:bg-purple-700	 m-3 w-full rounded-full font-bold text-white'
-        >
+<div className='flex xl:flex-row flex-col mt-5 gap-5'>
+     <Link to="/user_demo">
+     <button className='xl:w-60  h-12 bg-[#51087E] hover:bg-purple-700	 my-3 w-full rounded-full font-bold text-white'>
           Get Started
         </button>
+     </Link>
+     
+     
+   
          <button 
           onClick={() => setModalOpen(true)}
-          className='font-bold border border-gray-300 xl:w-60 h-12 m-3 w-full rounded-full shadow-2xl transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-[#51087E] hover:text-white duration-300'>
+          className="xl:w-60  h-12 bg-[#51087E] hover:bg-purple-700	 my-3 w-full rounded-full font-bold text-white">
           Watch Demo
         </button> 
       
@@ -109,7 +116,7 @@ const Hero = ({ thumb, thumbWidth, thumbHeight, video, videoWidth, videoHeight }
 
           </div>
              {/* image right side */}
-          <div className=" xl:w-auto aos-init aos-animate">
+          <div className=" xl:w-auto aos-init aos-animate ">
             <img className="transition ease-in-out delay-300 hover:-translate-y-1 hover:scale-110 duration-300 xl:w-[50rem] mt-[5rem] xl:mt-0" src={mainImg} width="1062" height="702" alt="" />
          
           </div>
@@ -117,7 +124,7 @@ const Hero = ({ thumb, thumbWidth, thumbHeight, video, videoWidth, videoHeight }
 
      {/* GHUMNE WALA COMPANIES DIV */}
     
-     <div className='container w-auto h-12 md:h-32 '>
+     {/* <div className='container w-auto h-12 md:h-32 '>
         <div className='grid grid-cols-4 py-5 divide-x divide-slate-700 bg-gradient-to-r from-indigo-500  	 '>
           <div className='flex flex-col items-center justify-center'>
             <h1 className='text-sm font-bold text-black/80 dark:text-white sm:text-lg md:text-3xl'>
@@ -144,9 +151,14 @@ const Hero = ({ thumb, thumbWidth, thumbHeight, video, videoWidth, videoHeight }
             <h1 className='sm:text-md text-xs md:text-lg'>Transactions</h1>
           </div>
         </div>
-        {/* BLACK LINE EMPTY DIV  */}
-        {/* <div className='sm:mt-[4rem] mt-[-4rem] mt-0 h-0 w-full border-[0.5px] border-horizontalline opacity-100'></div> */}
-      </div>  
+
+      </div>   */}
+      <div className='h-72  flex justify-center '>
+      <img src={random} 
+      className='h-72	w-2/4		'
+      />      
+      </div>
+      
     </div>
 
     

@@ -1,5 +1,5 @@
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-import image from '../images/pro-trading-bottom.jpg';
+import image from '../images/featuresImg.jpeg';
 const features = [
   {
     name: 'Secure Trading Environment.',
@@ -15,7 +15,7 @@ const features = [
   },
   {
     name: 'Automated Trading Simplicity.',
-    description: 'The USPL MOTA app simplifies trading by eliminating the need for technical expertise. Once your personalized MOTA is created, our software handles all aspects of trading on autopilot. Users can effortlessly monitor profits and losses using only the MOTA software tool and their broker account. Enjoy stress-free and accessible auto trading directly from your Windows-based desktop/laptop with a reliable internet connection.' ,
+    description: 'We create an Option Trading software (available on Mobile & Desktop), helping traders automate CALL or PUT options decisions for intra-day trading. Our advanced machine learning algorithms analyze historical and real-time market data, identifying candle and trend patterns to predict market movements. This empowers users to automate decision-making, potentially increasing profits. The USPL MOTA app simplifies trading, eliminating the need for technical expertise. Once personalized, MOTA handles all aspects of trading on autopilot. Users can easily monitor profits and losses using the MOTA software and their broker account. Enjoy stress-free auto trading on your Windows-based desktop/laptop with a reliable internet connection.' ,
     icon: ServerIcon,
   },
 ]
@@ -49,7 +49,7 @@ export default function Features() {
   <img
     src={image}
     alt="Product screenshot"
-    className="w-full h-full object-cover max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10"
+    className="w-full h-full  max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10"
   />
 </div>
 

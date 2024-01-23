@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FAQ = () => {
   const [openSections, setOpenSections] = useState([]);
@@ -20,39 +21,23 @@ const FAQ = () => {
       <h2 className="text-3xl font-bold dark:text-white lg:text-5xl lg:leading-9 md:leading-7 leading-9 text-gray-800">Frequently Asked Questions</h2>
       <div className="mt-4 flex md:justify-between md:items-start md:flex-row flex-col justify-start items-start">
         <div>
-          <p className="font-normal dark:text-gray-400 text-lg leading-6 text-gray-600 lg:w-8/12 md:w-9/12">Here are few of the most frequently asked questions by our valuable customers</p>
+          <p className=" mt-4 font-normal dark:text-gray-400 text-lg leading-6 text-gray-600 lg:w-8/12 md:w-9/12">Here are few of the most frequently asked questions by our valuable traders</p>
         </div>
 
-        <div className="border-b-2 border-gray-200 pb-2 flex justify-center items-center md:mt-0 mt-10 md:w-auto w-full">
-          <input
-            placeholder="Search"
-            type="text"
-            aria-label="Search"
-            className="dark:bg-transparent dark:text-gray-400 dark:placeholder-gray-400 lg:w-96 md:w-72 w-full focus:outline-none placeholder-gray-600 text-base font-normal text-gray-600 leading-4"
-          />
-          <svg
-            className="cursor-pointer text-gray-600 dark:text-gray-400"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M6.66667 11.3333C9.244 11.3333 11.3333 9.244 11.3333 6.66667C11.3333 4.08934 9.244 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.244 4.08934 11.3333 6.66667 11.3333Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M14 14L10 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
       </div>
       <div className="flex md:flex-row flex-col md:space-x-8 md:mt-16 mt-8">
         <div className="md:w-5/12 lg:w-4/12 w-full">
-         <button className='bg-black flex  rounded-full w-fit text-xl text-white px-6 py-3 font-medium hover:bg-purple-700	'>Subscribe
+        <Link to="/contact">
+        <button className='bg-black flex  rounded-full w-fit text-xl text-white px-6 py-3 font-medium hover:bg-purple-700	'>Contact
          </button>
+        </Link>
+     
         </div>       
         <div className="md:w-7/12 lg:w-8/12 w-full md:mt-0 sm:mt-14 mt-10">
           {/* Shipping Section */}
           <div>
             <div className="flex justify-between items-center cursor-pointer">
-              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">Shipping</h3>
+              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">How to use MOTA APP</h3>
               <button
                 aria-label="toggle"
                 className="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
@@ -65,7 +50,11 @@ const FAQ = () => {
               </button>
             </div>
             <p id="para1" className={`font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12 ${openSections.includes(1) ? "block" : "hidden"}`}>
-              We are covering every major country worldwide. The shipment leaves from the US as it is our headquarters. Some extra information you probably need to add here so that the customer is clear of their wanted expectations.
+            Open a demat account with brokers like Zerodha, Edelweiss, Kotak Securities, Alice Blue, or Shoonya.
+Trading limitations range from 1 lakh to 10 lakhs, and 100% of your amount will be utilized for trading.
+On the trading day, log in to the MOTA App between 7:30 am and 9:15 am, providing OTP for authentication.
+Once your demat account is open, share API details with our support team for setting up the USPL MOTA Application on your mobile or desktop.
+The MOTA App will autonomously execute buying and selling orders based on your algorithm.
             </p>
           </div>
 
@@ -74,7 +63,7 @@ const FAQ = () => {
           {/* Returns Section */}
           <div>
             <div className="flex justify-between items-center cursor-pointer">
-              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">Returns</h3>
+              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">How to check your Profit and Loss</h3>
               <button
                 aria-label="toggle"
                 className="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
@@ -87,7 +76,7 @@ const FAQ = () => {
               </button>
             </div>
             <p id="para2" className={`font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12 ${openSections.includes(2) ? "block" : "hidden"}`}>
-              We are covering every major country worldwide. The shipment leaves from the US as it is our headquarters. Some extra information you probably need to add here so that the customer is clear of their wanted expectations.
+            To review your profit and loss details, log in to your demat account using your login credentials.
             </p>
           </div>
 
@@ -96,7 +85,7 @@ const FAQ = () => {
           {/* Exchange Section */}
           <div>
             <div className="flex justify-between items-center cursor-pointer">
-              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">Exchange</h3>
+              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">How to withdraw profit and deposit from your Demat Account</h3>
               <button
                 aria-label="toggle"
                 className="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
@@ -109,7 +98,7 @@ const FAQ = () => {
               </button>
             </div>
             <p id="para3" className={`font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12 ${openSections.includes(3) ? "block" : "hidden"}`}>
-              We are covering every major country worldwide. The shipment leaves from the US as it is our headquarters. Some extra information you probably need to add here so that the customer is clear of their wanted expectations.
+            Your bank account details are already connected to your demat account, enabling you to effortlessly withdraw profits or deposit funds. We recommend utilizing UPI payments for these transactions.
             </p>
           </div>
 
@@ -118,7 +107,7 @@ const FAQ = () => {
           {/* Tracking Section */}
           <div>
             <div className="flex justify-between items-center cursor-pointer">
-              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">Tracking</h3>
+              <h3 className="font-semibold text-xl dark:text-white leading-5 text-gray-800">How to get Notification of App</h3>
               <button
                 aria-label="toggle"
                 className="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
@@ -131,7 +120,7 @@ const FAQ = () => {
               </button>
             </div>
             <p id="para4" className={`font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12 ${openSections.includes(4) ? "block" : "hidden"}`}>
-              We are covering every major country worldwide. The shipment leaves from the US as it is our headquarters. Some extra information you probably need to add here so that the customer is clear of their wanted expectations.
+            Ensure you use the same email ID and mobile number used during the registration for the MOTA App. Consequently, notifications will be sent for daily trading activities.
             </p>
           </div>
 
